@@ -7,7 +7,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="farmtron-os.css"><link rel="stylesheet" href="farmtron-os-override.css">
 </head>
 <body>
-  <header class="portfolio-bar"><a href="farmtron.html">← Farmtron project report</a><span>FarmtronOS browser port · simulator mode</span><button id="fullscreenButton">Fullscreen</button></header>
+  <div class="site-controls" aria-label="Portfolio controls"><a href="farmtron.html">Portfolio</a><button id="fullscreenButton">Fullscreen</button></div>
   <div class="viewport-stage"><div class="farmtron-window" id="farmtronWindow">
     <aside class="native-sidebar">
       <strong class="app-name">FarmtronOS</strong>
@@ -19,6 +19,5 @@
     <main class="native-main" id="osContent" aria-live="polite"></main>
     <div class="native-toast" id="osToast"></div>
   </div></div>
-  <p class="browser-note">This public build reproduces the FarmtronOS interface and runs locally in simulator mode. Hardware and private service connections are disabled.</p>
   <script src="farmtron-os.js"></script>
 </body></html>
