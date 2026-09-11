@@ -1,0 +1,16 @@
+.viewport-stage{position:relative;display:block;overflow:hidden;padding:0}
+.farmtron-window{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--scale,1));transform-origin:center center}
+.farmtron-window:fullscreen{left:50%;top:50%;transform:translate(-50%,-50%) scale(min(1,calc(100vw / 1280),calc(100vh / 720)));background:#efefef}
+.map-layout{grid-template-columns:750px 80px 254px}
+#osTabs{gap:3px}
+#osTabs button{height:31px;font-size:16px}
+.mounted-panel p{margin:7px 0}
+.boot-panel{width:620px;padding:27px 25px}
+.boot-panel h1{font-size:36px}
+.boot-progress i.failed{background:#4a1515;border-color:#ff4b4b}
+.controller-indicator{height:62px;display:grid;grid-template-columns:48px 1fr;align-items:center;font-size:16px}
+.controller-indicator i{width:22px;height:22px;background:#ffe45c;border:2px solid #c9a800;margin-left:12px}
+.controller-indicator i.failed{background:#ff4b4b;border-color:#9b1c1c}
+.boot-actions{grid-template-columns:repeat(3,1fr)}
+.boot-actions .retry-homing{grid-column:1/-1;color:#777}
+.gantry-line-x,.gantry-line-y,.gantry-head{transition:top .8s cubic-bezier(.45,0,.2,1),left .8s cubic-bezier(.45,0,.2,1)}
