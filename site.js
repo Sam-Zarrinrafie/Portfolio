@@ -17,3 +17,21 @@ if (model && reset) reset.addEventListener('click', () => {
   model.cameraTarget = 'auto auto auto';
   model.fieldOfView = '30deg';
 });
+
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = [...carousel.querySelectorAll('.carousel-slide')];
+  const status = carousel.querySelector('[data-carousel-status]');
+  let index = 0;
+  const show = (next) => {
+    slides[index]?.querySelector('video')?.pause();
+    index = (next + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    status.textContent = `${index + 1} / ${slides.length}`;
+  };
+  carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => show(index - 1));
+  carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => show(index + 1));
+  let startX = 0;
+  track.addEventListener('pointerdown', (event) => { startX = event.clientX; });
+  track.addEventListener('pointerup', (event) => { if (Math.abs(event.clientX - startX) > 60) show(index + (event.clientX < startX ? 1 : -1)); });
+});
